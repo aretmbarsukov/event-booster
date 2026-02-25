@@ -1,0 +1,83 @@
+body {
+    background: #0d0d0d;
+    font-family: "Montserrat", sans-serif;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+.events-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 63px 72px;
+    padding: 40px 0;
+    list-style: none;
+    margin: 0;
+}
+
+.event-card {
+    background: #1a1a1a;
+    border-radius: 60px 0 60px 0;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.55);
+}
+
+.event-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.event-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 14px 16px 6px;
+    color: #fff;
+}
+
+.event-date {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0 16px 4px;
+    color: #ff3d9a;
+}
+
+.event-place {
+    font-size: 14px;
+    margin: 0 16px 16px;
+    color: #ccc;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin: 30px 0 60px;
+}
+
+.pagination button {
+    background: #ff3d9a;
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.pagination button:hover {
+    background: #ff5fb0;
+}
+
+#page-info {
+    color: #fff;
+    font-size: 16px;
+}
