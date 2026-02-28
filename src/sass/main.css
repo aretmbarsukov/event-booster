@@ -74,7 +74,7 @@ h1 {
 }
 
 header {
-  background-image: url(../../img/pic.png);
+  background-image: url(./../img/pic.png);
   background-position: center;
   background-size: cover;
   position: relative;
@@ -137,7 +137,7 @@ header {
     margin-bottom: 52px;
   }
   header {
-    background-image: url(../../img/pic.png);
+    background-image: url(./../img/pic.png);
     background-position: center;
     background-size: cover;
     position: relative;
@@ -172,7 +172,7 @@ header {
     margin-top: 78px;
   }
   header {
-    background-image: url(../../img/pic.png);
+    background-image: url(./../img/pic.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -208,7 +208,7 @@ header {
     margin-top: 78px;
   }
   header {
-    background-image: url(../../img/pic.png);
+    background-image: url(./../img/pic.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
