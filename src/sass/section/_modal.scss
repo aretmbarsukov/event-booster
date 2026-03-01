@@ -1,0 +1,335 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(32, 13, 29, 0.6);
+  backdrop-filter: blur(1.5px);
+  // display: flex;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  border-radius: 300px 0;
+  background: #fff2fd;
+  width: 930px;
+  height: 930px;
+  padding: 30px;
+
+  text-align: center;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.event-logo {
+  background-color: black;
+  width: 130px;
+  height: 130px;
+  border-radius: 100%;
+  margin-bottom: 41px;
+}
+
+.modal-big-logo {
+  width: 360px;
+  height: 641px;
+  background-color: aqua;
+}
+.modal-info-box {
+  width: 870px;
+  // outline: 1px solid black;
+
+  display: flex;
+  gap: 60px;
+}
+
+.modal-text {
+  // outline: 1px solid black;
+  width: 450px;
+  height: 641px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-more {
+  width: 255px;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid #4c00fe;
+
+  background-color: transparent;
+
+  color: #4c00fe;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+
+  margin-top: 10px;
+}
+.modal-info {
+  color: #0e0e0e;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  margin-bottom: 15px;
+
+  display: flex;
+}
+
+.modal-h3 {
+  color: #dc56c5;
+  font-family: Montserrat;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+
+  margin-bottom: 7px;
+}
+
+.modal-quarcode {
+  width: 29px;
+
+  margin-right: 13px;
+}
+
+.modal-buy-tickets {
+  border-radius: 5px;
+  background: #4c00fe;
+
+  width: 145px;
+  height: 40px;
+  color: #fff;
+
+  margin-bottom: 31px;
+
+  border: none;
+}
+
+//adaptiv-------------------------------------------------
+@media (max-width: 1199px) and (min-width: 768px) {
+  .modal {
+    width: 595px;
+    height: 831px;
+
+    padding: 50px;
+  }
+  .modal-big-logo {
+    margin-top: 50px;
+    width: 233px;
+    height: 416px;
+  }
+
+  .modal-info-box {
+    width: 528px;
+    gap: 30px;
+  }
+  .modal-text {
+    width: 265px;
+    height: 580px;
+  }
+
+  .modal-info {
+    color: #0e0e0e;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 7px;
+
+    display: flex;
+  }
+
+  .modal-h3 {
+    color: #dc56c5;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+
+    margin-bottom: 3px;
+  }
+  .event-logo {
+    background-color: black;
+    width: 70px;
+    height: 75px;
+    border-radius: 100%;
+    margin-bottom: 15px;
+  }
+
+  .modal-buy-tickets {
+    border-radius: 5px;
+    background: #4c00fe;
+
+    width: 145px;
+    height: 40px;
+    color: #fff;
+
+    margin-bottom: 31px;
+
+    border: none;
+  }
+}
+
+@media (max-width: 767px) and (min-width: 480px) {
+  .modal {
+    width: 350px;
+    height: 915px;
+
+    padding: 50px;
+    border-radius: 150px 0;
+    background: #fff2fd;
+  }
+  .modal-big-logo {
+    margin-top: 50px;
+    width: 233px;
+    height: 416px;
+    display: none;
+  }
+
+  .modal-info-box {
+    width: 272px;
+    gap: 30px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .modal-text {
+    width: 265px;
+    height: 580px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .modal-info {
+    color: #0e0e0e;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 7px;
+
+    display: flex;
+
+    text-align: center;
+  }
+
+  .modal-h3 {
+    color: #dc56c5;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+
+    margin-bottom: 3px;
+    text-align: center;
+  }
+  .event-logo {
+    background-color: black;
+    width: 70px;
+    height: 75px;
+    border-radius: 100%;
+    margin-bottom: 15px;
+  }
+
+  .modal-buy-tickets {
+    border-radius: 5px;
+    background: #4c00fe;
+
+    width: 145px;
+    height: 40px;
+    color: #fff;
+
+    margin-bottom: 31px;
+
+    border: none;
+  }
+}
+
+@media (max-width: 479px) {
+  .modal {
+    width: 350px;
+    height: 915px;
+
+    padding: 50px;
+    border-radius: 150px 0;
+    background: #fff2fd;
+  }
+  .modal-big-logo {
+    margin-top: 50px;
+    width: 233px;
+    height: 416px;
+    display: none;
+  }
+
+  .modal-info-box {
+    width: 272px;
+    gap: 30px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .modal-text {
+    width: 265px;
+    height: 580px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .modal-info {
+    color: #0e0e0e;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 7px;
+
+    display: flex;
+
+    text-align: center;
+  }
+
+  .modal-h3 {
+    color: #dc56c5;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+
+    margin-bottom: 3px;
+    text-align: center;
+  }
+  .event-logo {
+    background-color: black;
+    width: 70px;
+    height: 75px;
+    border-radius: 100%;
+    margin-bottom: 15px;
+  }
+
+  .modal-buy-tickets {
+    border-radius: 5px;
+    background: #4c00fe;
+
+    width: 145px;
+    height: 40px;
+    color: #fff;
+
+    margin-bottom: 31px;
+
+    border: none;
+  }
+}
