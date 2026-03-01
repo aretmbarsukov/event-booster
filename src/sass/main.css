@@ -217,7 +217,7 @@ header {
   }
 }
 body {
-  background-image: url(../../img/back.webp);
+  background-image: url(./../img/back.webp);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -325,6 +325,13 @@ body {
     grid-template-columns: 1fr;
   }
 }
+.text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
 .backdrop {
   position: fixed;
   top: 0;

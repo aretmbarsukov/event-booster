@@ -12,12 +12,10 @@ async function loadEvents(page = 0) {
 
   if (!list) return;
 
-  // Якщо сервер повернув події — оновлюємо maxAvailablePage
   if (events.length > 0) {
     maxAvailablePage = page;
   }
 
-  // Якщо подій немає — не оновлюємо currentPage
   if (events.length === 0) {
     return;
   }
@@ -26,6 +24,8 @@ async function loadEvents(page = 0) {
 
   const markup = events
     .map(ev => {
+      // console.log(ev._embedded?.venues?.[0].country);
+
       const img = ev.images?.[0]?.url || '';
       const name = ev.name || '';
       const date = ev.dates?.start?.localDate || '';
