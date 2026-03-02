@@ -30,7 +30,6 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 15px;
-  outline: 1px solid red;
 }
 @media screen and (min-width: 480px) {
   .container {
@@ -63,14 +62,6 @@ h1 {
 
 .bg__event {
   position: absolute;
-  width: 220px;
-  height: 220px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 0px 0px 400px;
-  background: linear-gradient(136deg, rgba(196, 196, 196, 0.03) 10.75%, rgba(196, 196, 196, 0) 92.33%);
-  backdrop-filter: blur(15px);
 }
 
 header {

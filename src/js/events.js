@@ -5,31 +5,62 @@ let allEvents = [];
 
 // Завантажуємо всі события з API
 async function fetchAllEvents() {
-  let page = 0;
-  let events = [];
-  let hasMore = true;
-
-  while (hasMore) {
-    const apiUrl = `https://app.ticketmaster.com/discovery/v2/events.json?apikey=Q8bHL81HES4CjxatVZAVSQWYyAffYhbQ&page=${page}`;
-
-    try {
-      const response = await fetch(apiUrl);
-      const data = await response.json();
-      const pageEvents = data._embedded?.events || [];
-
-      events = events.concat(pageEvents);
-
-      if (pageEvents.length < 20) {
-        hasMore = false;
-      }
-      page++;
-    } catch (error) {
-      console.log('Помилка завантаження:', error);
-      hasMore = false;
+  try {
+    // Показуємо що йде завантаження
+    const eventsList = document.querySelector('.events-list');
+    if (eventsList) {
+      eventsList.innerHTML =
+        '<div style="display: flex; justify-content: center; align-items: center; min-height: 400px; font-size: 24px; font-weight: bold; color: #666;">Loading all pages<span style="display: inline-block; margin-left: 10px; animation: spin 1s linear infinite;"></span></div>';
     }
-  }
 
-  return events;
+    let events = [];
+    const TOTAL_PAGES = 51;
+    const BATCH_SIZE = 3; // По 3 сторінки одночасно
+
+    console.log(`Завантажую ${TOTAL_PAGES} сторінок...`);
+
+    // Завантажуємо батчами по 3 сторінки
+    for (let start = 0; start < TOTAL_PAGES; start += BATCH_SIZE) {
+      const end = Math.min(start + BATCH_SIZE, TOTAL_PAGES);
+      const batchPromises = [];
+
+      // Створюємо запити для цього батчу
+      for (let page = start; page < end; page++) {
+        const url = `https://app.ticketmaster.com/discovery/v2/events.json?apikey=Q8bHL81HES4CjxatVZAVSQWYyAffYhbQ&page=${page}`;
+        batchPromises.push(
+          fetch(url, { signal: AbortSignal.timeout(10000) })
+            .then(res => res.json())
+            .then(data => {
+              const pageEvents = data._embedded?.events || [];
+              console.log(`✓ Сторінка ${page + 1}/${TOTAL_PAGES} - ${pageEvents.length} подій`);
+              return pageEvents;
+            })
+            .catch(err => {
+              console.log(`⚠ Сторінка ${page + 1}: ${err.message}`);
+              return [];
+            })
+        );
+      }
+
+      // Чекаємо поки цей батч завантажиться
+      const batchResults = await Promise.all(batchPromises);
+      batchResults.forEach(pageEvents => {
+        events = events.concat(pageEvents);
+      });
+
+      // Невелика затримка між батчами
+      await new Promise(resolve => setTimeout(resolve, 100));
+    }
+
+    console.log(
+      `✅ Готово! Завантажено ${events.length} подій з ${TOTAL_PAGES} сторінок`
+    );
+
+    return events;
+  } catch (error) {
+    console.log('Критична помилка:', error);
+    return [];
+  }
 }
 
 // Отримуємо відфільтровані события
@@ -81,9 +112,10 @@ function displayEvents(pageNum = 0) {
     const name = event.name || 'Без названия';
     const date = event.dates?.start?.localDate || 'Дата невідома';
     const place = event._embedded?.venues?.[0]?.name || 'Місце невідоме';
+    const country = event._embedded?.venues?.[0]?.country?.name || 'Unknown';
 
     html += `
-      <li class="event-card">
+      <li class="event-card" data-country="${country}">
         <img class="event-img" src="${image}" alt="${name}">
         <h3 class="event-title">${name}</h3>
         <p class="event-date">${date}</p>
