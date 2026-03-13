@@ -32,7 +32,9 @@ async function fetchAllEvents() {
             .then(res => res.json())
             .then(data => {
               const pageEvents = data._embedded?.events || [];
-              console.log(`✓ Сторінка ${page + 1}/${TOTAL_PAGES} - ${pageEvents.length} подій`);
+              console.log(
+                `✓ Сторінка ${page + 1}/${TOTAL_PAGES} - ${pageEvents.length} подій`
+              );
               return pageEvents;
             })
             .catch(err => {
@@ -113,13 +115,14 @@ function displayEvents(pageNum = 0) {
     const date = event.dates?.start?.localDate || 'Дата невідома';
     const place = event._embedded?.venues?.[0]?.name || 'Місце невідоме';
     const country = event._embedded?.venues?.[0]?.country?.name || 'Unknown';
+    const info = event.promoter?.description || 'no description';
 
     html += `
       <li class="event-card" data-country="${country}">
         <img class="event-img" src="${image}" alt="${name}">
-        <h3 class="event-title">${name}</h3>
-        <p class="event-date">${date}</p>
-        <p class="event-place">${place}</p>
+        <h3 class="event-title" data-info="${info}">${name}</h3>
+        <p class="event-date" date="${date}">${date}</p>
+        <p class="event-place" place="${place}">${place}</p>
       </li>
     `;
   });
@@ -173,6 +176,61 @@ document.addEventListener('DOMContentLoaded', async () => {
       }
     });
   }
+  //modal---------------------
+  const card = document.querySelectorAll('.event-card');
+  const backdrop = document.querySelector('.backdrop');
+  const eventsList = document.querySelector('.events-list');
+  const closeBtn = document.querySelector('.close-btn');
+  const modalDate = document.querySelector('.modal-date');
+  const modalPlace = document.querySelector('.modal-place');
+  const modalName = document.querySelector('.modal-name');
+  const modalAbout = document.querySelector('.modal-about');
+  //modalitems-
+  const logo = document.querySelector('.event-logo');
+  const bigLogo = document.querySelector('.modal-big-logo');
+  //end
+  function modalOpen() {
+    backdrop.style.display = 'flex';
+  }
+
+  function modalClose() {
+    backdrop.style.display = 'none';
+  }
+  closeBtn.addEventListener('click', () => {
+    modalClose();
+  });
+  eventsList.addEventListener('click', e => {
+    // if (e.target.closest('.event-card')) {
+    //   modalOpen();
+    //   const img = card.querySelector('img');
+    //   const src = img.src;
+    //   console.log(src);
+    // }
+
+    const card = e.target.closest('.event-card');
+
+    if (card) {
+      modalOpen();
+      const img = card.querySelector('img');
+      const data = card.querySelector('.event-date');
+      const place = card.querySelector('.event-place');
+      const name = card.querySelector('.event-title');
+      const info = card.querySelector('h3').dataset.info;
+      console.log(modalAbout);
+      console.log(info);
+
+      const src = img.src;
+      console.log(src);
+      modalDate.textContent = data.textContent;
+      modalPlace.textContent = place.textContent;
+      modalName.textContent = name.textContent;
+      modalAbout.textContent = info;
+
+      bigLogo.style.backgroundImage = `url(${src})`;
+      logo.style.backgroundImage = `url(${src})`;
+    }
+  });
+  //header-------------------------------------------
 
   // Обробник dropdown для вибору країни
   const dropdown = document.querySelector('.country-dropdown');
