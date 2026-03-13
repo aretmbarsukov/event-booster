@@ -16,9 +16,10 @@
   border-radius: 300px 0;
   background: #fff2fd;
   width: 930px;
-  height: 930px;
+  height: 1000px;
   padding: 30px;
 
+  position: relative;
   text-align: center;
   flex-direction: column;
   display: flex;
@@ -26,7 +27,11 @@
   align-items: center;
 }
 .event-logo {
-  background-color: black;
+  background-image: url(./../img/vite-logo.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
   width: 130px;
   height: 130px;
   border-radius: 100%;
@@ -36,7 +41,10 @@
 .modal-big-logo {
   width: 360px;
   height: 641px;
-  background-color: aqua;
+  background-image: url(./../img/back.webp);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .modal-info-box {
   width: 870px;
@@ -95,7 +103,19 @@
 
   margin-bottom: 7px;
 }
+.close-btn {
+  background-image: url(./../img/close.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: transparent;
+  border: none;
+  color: transparent;
 
+  position: absolute;
+  top: 50px;
+  right: 50px;
+}
 .modal-quarcode {
   width: 29px;
 
@@ -119,7 +139,7 @@
 @media (max-width: 1199px) and (min-width: 768px) {
   .modal {
     width: 595px;
-    height: 831px;
+    height: 1000px;
 
     padding: 50px;
   }
@@ -161,7 +181,6 @@
     margin-bottom: 3px;
   }
   .event-logo {
-    background-color: black;
     width: 70px;
     height: 75px;
     border-radius: 100%;
@@ -185,7 +204,7 @@
 @media (max-width: 767px) and (min-width: 480px) {
   .modal {
     width: 350px;
-    height: 915px;
+    height: 1000px;
 
     padding: 50px;
     border-radius: 150px 0;
@@ -237,7 +256,6 @@
     text-align: center;
   }
   .event-logo {
-    background-color: black;
     width: 70px;
     height: 75px;
     border-radius: 100%;
@@ -261,7 +279,7 @@
 @media (max-width: 479px) {
   .modal {
     width: 350px;
-    height: 915px;
+    height: 1000px;
 
     padding: 50px;
     border-radius: 150px 0;
@@ -313,7 +331,6 @@
     text-align: center;
   }
   .event-logo {
-    background-color: black;
     width: 70px;
     height: 75px;
     border-radius: 100%;
