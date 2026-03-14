@@ -262,7 +262,7 @@ header {
   backdrop-filter: blur(10px);
   border-radius: 20px;
   cursor: pointer;
-  color: #e9e9e9;
+  color: #fff;
   height: 40px;
   display: flex;
   align-items: center;
@@ -429,7 +429,7 @@ body {
   border-radius: 300px 0;
   background: #fff2fd;
   width: 930px;
-  height: 1000px;
+  height: 900px;
   padding: 30px;
   position: relative;
   text-align: center;
@@ -452,10 +452,10 @@ body {
 
 .modal-big-logo {
   width: 360px;
-  height: 641px;
+  height: 520px;
   background-image: url(./../img/back.webp);
   background-position: center;
-  background-size: cover;
+  background-size: 150%;
   background-repeat: no-repeat;
 }
 
@@ -467,7 +467,7 @@ body {
 
 .modal-text {
   width: 450px;
-  height: 641px;
+  height: px;
   text-align: left;
   display: flex;
   flex-direction: column;
@@ -486,6 +486,12 @@ body {
   font-weight: 500;
   line-height: normal;
   margin-top: 10px;
+  transition: all 300ms;
+}
+
+.modal-more:hover {
+  border: 1px solid #3700b8;
+  color: #3700b8;
 }
 
 .modal-info {
@@ -535,21 +541,27 @@ body {
   color: #fff;
   margin-bottom: 31px;
   border: none;
+  transition: all 300ms;
+}
+
+.modal-buy-tickets:hover {
+  background: #3700b6;
 }
 
 @media (max-width: 1199px) and (min-width: 768px) {
   .modal {
     width: 595px;
-    height: 1000px;
+    height: 800px;
     padding: 50px;
   }
   .modal-big-logo {
     margin-top: 50px;
     width: 233px;
-    height: 416px;
+    height: 200px;
   }
   .modal-info-box {
     width: 528px;
+    height: 450px;
     gap: 30px;
   }
   .modal-text {
@@ -576,7 +588,7 @@ body {
     margin-bottom: 3px;
   }
   .event-logo {
-    width: 70px;
+    width: 75px;
     height: 75px;
     border-radius: 100%;
     margin-bottom: 15px;
@@ -594,7 +606,7 @@ body {
 @media (max-width: 767px) and (min-width: 480px) {
   .modal {
     width: 350px;
-    height: 1000px;
+    height: 700px;
     padding: 50px;
     border-radius: 150px 0;
     background: #fff2fd;
@@ -613,7 +625,7 @@ body {
   }
   .modal-text {
     width: 265px;
-    height: 580px;
+    height: 450px;
     flex-direction: column;
     align-items: center;
   }
@@ -639,7 +651,7 @@ body {
     text-align: center;
   }
   .event-logo {
-    width: 70px;
+    width: 75px;
     height: 75px;
     border-radius: 100%;
     margin-bottom: 15px;
@@ -650,14 +662,14 @@ body {
     width: 145px;
     height: 40px;
     color: #fff;
-    margin-bottom: 31px;
+    margin-bottom: 20px;
     border: none;
   }
 }
 @media (max-width: 479px) {
   .modal {
     width: 350px;
-    height: 1000px;
+    height: 700px;
     padding: 50px;
     border-radius: 150px 0;
     background: #fff2fd;
@@ -676,7 +688,7 @@ body {
   }
   .modal-text {
     width: 265px;
-    height: 580px;
+    height: 450px;
     flex-direction: column;
     align-items: center;
   }
@@ -702,7 +714,7 @@ body {
     text-align: center;
   }
   .event-logo {
-    width: 70px;
+    width: 75px;
     height: 75px;
     border-radius: 100%;
     margin-bottom: 15px;
@@ -713,7 +725,7 @@ body {
     width: 145px;
     height: 40px;
     color: #fff;
-    margin-bottom: 31px;
+    margin-bottom: 20px;
     border: none;
   }
 }/*# sourceMappingURL=main.css.map */
