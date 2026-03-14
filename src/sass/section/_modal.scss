@@ -16,7 +16,7 @@
   border-radius: 300px 0;
   background: #fff2fd;
   width: 930px;
-  height: 1000px;
+  height: 900px;
   padding: 30px;
 
   position: relative;
@@ -40,16 +40,18 @@
 
 .modal-big-logo {
   width: 360px;
-  height: 641px;
+  height: 520px;
   background-image: url(./../img/back.webp);
+
   background-position: center;
-  background-size: cover;
+  background-size: 150%;
+
   background-repeat: no-repeat;
 }
 .modal-info-box {
   width: 870px;
   // outline: 1px solid black;
-
+  // height: px;
   display: flex;
   gap: 60px;
 }
@@ -57,7 +59,7 @@
 .modal-text {
   // outline: 1px solid black;
   width: 450px;
-  height: 641px;
+  height: px;
   text-align: left;
   display: flex;
   flex-direction: column;
@@ -79,6 +81,13 @@
   line-height: normal;
 
   margin-top: 10px;
+
+  transition: all 300ms;
+}
+
+.modal-more:hover {
+  border: 1px solid #3700b8;
+  color: #3700b8;
 }
 .modal-info {
   color: #0e0e0e;
@@ -133,24 +142,29 @@
   margin-bottom: 31px;
 
   border: none;
+  transition: all 300ms;
+}
+.modal-buy-tickets:hover {
+  background: #3700b6;
 }
 
 //adaptiv-------------------------------------------------
 @media (max-width: 1199px) and (min-width: 768px) {
   .modal {
     width: 595px;
-    height: 1000px;
+    height: 800px;
 
     padding: 50px;
   }
   .modal-big-logo {
     margin-top: 50px;
     width: 233px;
-    height: 416px;
+    height: 200px;
   }
 
   .modal-info-box {
     width: 528px;
+    height: 450px;
     gap: 30px;
   }
   .modal-text {
@@ -181,7 +195,7 @@
     margin-bottom: 3px;
   }
   .event-logo {
-    width: 70px;
+    width: 75px;
     height: 75px;
     border-radius: 100%;
     margin-bottom: 15px;
@@ -204,7 +218,7 @@
 @media (max-width: 767px) and (min-width: 480px) {
   .modal {
     width: 350px;
-    height: 1000px;
+    height: 700px;
 
     padding: 50px;
     border-radius: 150px 0;
@@ -225,7 +239,7 @@
   }
   .modal-text {
     width: 265px;
-    height: 580px;
+    height: 450px;
     flex-direction: column;
     align-items: center;
   }
@@ -256,7 +270,7 @@
     text-align: center;
   }
   .event-logo {
-    width: 70px;
+    width: 75px;
     height: 75px;
     border-radius: 100%;
     margin-bottom: 15px;
@@ -270,16 +284,88 @@
     height: 40px;
     color: #fff;
 
-    margin-bottom: 31px;
+    margin-bottom: 20px;
 
     border: none;
   }
 }
 
 @media (max-width: 479px) {
+  //   .modal {
+  //     width: 350px;
+  //     height: 700px;
+
+  //     padding: 50px;
+  //     border-radius: 150px 0;
+  //     background: #fff2fd;
+  //   }
+  //   .modal-big-logo {
+  //     margin-top: 50px;
+  //     width: 233px;
+  //     height: 416px;
+  //     display: none;
+  //   }
+
+  //   .modal-info-box {
+  //     width: 272px;
+  //     gap: 30px;
+  //     flex-direction: column;
+  //     align-items: center;
+  //   }
+  //   .modal-text {
+  //     width: 265px;
+  //     height: 580px;
+  //     flex-direction: column;
+  //     align-items: center;
+  //   }
+
+  //   .modal-info {
+  //     color: #0e0e0e;
+  //     font-family: Montserrat;
+  //     font-size: 16px;
+  //     font-style: normal;
+  //     font-weight: 400;
+  //     line-height: normal;
+  //     margin-bottom: 7px;
+
+  //     display: flex;
+
+  //     text-align: center;
+  //   }
+
+  //   .modal-h3 {
+  //     color: #dc56c5;
+  //     font-family: Montserrat;
+  //     font-size: 20px;
+  //     font-style: normal;
+  //     font-weight: 600;
+  //     line-height: normal;
+
+  //     margin-bottom: 3px;
+  //     text-align: center;
+  //   }
+  //   .event-logo {
+  //     width: 70px;
+  //     height: 75px;
+  //     border-radius: 100%;
+  //     margin-bottom: 15px;
+  //   }
+
+  //   .modal-buy-tickets {
+  //     border-radius: 5px;
+  //     background: #4c00fe;
+
+  //     width: 145px;
+  //     height: 40px;
+  //     color: #fff;
+
+  //     margin-bottom: 31px;
+
+  //     border: none;
+  //   }
   .modal {
     width: 350px;
-    height: 1000px;
+    height: 700px;
 
     padding: 50px;
     border-radius: 150px 0;
@@ -300,7 +386,7 @@
   }
   .modal-text {
     width: 265px;
-    height: 580px;
+    height: 450px;
     flex-direction: column;
     align-items: center;
   }
@@ -331,7 +417,7 @@
     text-align: center;
   }
   .event-logo {
-    width: 70px;
+    width: 75px;
     height: 75px;
     border-radius: 100%;
     margin-bottom: 15px;
@@ -345,7 +431,7 @@
     height: 40px;
     color: #fff;
 
-    margin-bottom: 31px;
+    margin-bottom: 20px;
 
     border: none;
   }
